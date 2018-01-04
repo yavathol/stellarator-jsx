@@ -1,10 +1,22 @@
 import React, {Component} from 'react';
+import Button from './components/Button';
+
+function handleButtonClick() {
+    alert('ButtonClicked');
+}
 
 class App extends Component {
 	render() {
 		return (
 			<div>
-				{/*
+				<Button type="secondary">
+                    Hello
+                </Button>
+                <Button disabled>prim</Button>
+                <Button loading>loading</Button>
+                <Button onButtonClick={handleButtonClick}>Click</Button>
+
+                {/*
 					Component:
 						Button
 

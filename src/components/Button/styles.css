@@ -1,0 +1,17 @@
+.btn {
+    background: white;
+    color: black;
+}
+
+.btn[disabled] {
+    color: green;
+}
+
+.btn-primary {
+    background: dodgerblue;
+}
+
+
+.btn-secondary {
+    background: red;
+}
