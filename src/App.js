@@ -10,8 +10,8 @@ class App extends Component {
 
 					Props:
 						type (possible values: primary - default / secondary / disabled / loading)
+						onButtonClick (function)
 				*/}
-
 
 
 				{/*
@@ -47,6 +47,20 @@ class App extends Component {
 						value (string)
 						size (possible values: small / medium - default / large)
 						error (string)
+						onInputChange (function)
+				*/}
+
+
+				{/*
+					Component:
+						LoginForm
+
+					Contains:
+						Two input fields - email and password
+						Submit button
+
+					Expected behavior:
+						Login and password should be printed in the console on submit button click
 				*/}
 
 
