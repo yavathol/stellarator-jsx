@@ -1,17 +1,23 @@
 .btn {
-    background: white;
-    color: black;
+    background: dodgerblue; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 .btn[disabled] {
-    color: green;
+    background: darkgrey;
 }
 
 .btn-primary {
-    background: dodgerblue;
+    background: indianred;
 }
 
-
 .btn-secondary {
-    background: red;
+    background: cornflowerblue;
+    color: whitesmoke;
 }

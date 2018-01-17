@@ -1,69 +1,66 @@
 import React, {Component} from 'react';
 import Button from './components/Button';
+import Text from './components/Text';
+import Notification from "./components/Notification";
+import Input from "./components/Input";
 
 function handleButtonClick() {
     alert('ButtonClicked');
 }
 
+function handleButtonHello() {
+    alert('Hello')
+}
+
+function handleChange(event) {
+    alert(event.target.value)
+}
+
 class App extends Component {
-	render() {
-		return (
-			<div>
-				<Button type="secondary">
+    render() {
+        return (
+            <div>
+                <Button type="secondary" onButtonClick={handleButtonHello}>
                     Hello
                 </Button>
-                <Button disabled>prim</Button>
-                <Button loading>loading</Button>
+                <Button disabled>Disabled button</Button>
+                <Button loading/>
                 <Button onButtonClick={handleButtonClick}>Click</Button>
 
+                <br/>
+
+                <Text>This is a sample default text</Text>
+                <br/>
+
+                <Text heading size='large'>The heading</Text>
+                <Text size='small'>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus est non metus mollis
+                    dignissim. Vestibulum condimentum tincidunt ultrices. Fusce a felis mattis, pellentesque nunc ac,
+                    pellentesque sapien. Sed nec lectus accumsan, dignissim sem eget, facilisis mauris. Suspendisse
+                    volutpat massa at risus vehicula, ac luctus ipsum placerat. Praesent eget leo nulla. Suspendisse
+                    dictum et sapien a pharetra. Nunc eget rhoncus turpis. Cras quis diam dictum, pellentesque risus a,
+                    blandit nibh. Nullam viverra, diam vitae auctor pellentesque, elit sem imperdiet odio, in maximus
+                    augue odio id leo. Vestibulum dignissim eu enim sed eleifend. Curabitur ut nunc ut ligula malesuada
+                    viverra ut vitae enim. Donec sodales, orci efficitur imperdiet tempus, magna sem blandit purus, quis
+                    imperdiet libero nibh quis lorem. Sed id malesuada metus, eget pulvinar enim. Quisque vulputate
+                    cursus iaculis.
+                </Text>
+
+                <br />
+
+                <Notification>A default notification</Notification>
+                <Notification type='danger'>Something nasty happened</Notification>
+                <Notification type='success'>YES!</Notification>
+
+                <br />
+
+                <Input />
+                <br />
+                <Input type='email' size='large' placeholder='Enter email address...' label='Email address' onInputChange={handleChange} name='emailAddress' />
+
+                <Input type='textarea' label='TextArea'/>
+
                 {/*
-					Component:
-						Button
-
-					Props:
-						type (possible values: primary - default / secondary / disabled / loading)
-						onButtonClick (function)
-				*/}
-
-
-				{/*
-					Component:
-						Text
-
-					Props:
-						heading (possible values: true / false - default)
-						size (possible values: small / medium - default / large)
-				*/}
-
-
-
-				{/*
-					Component:
-						Notification
-
-					Props:
-						type (possible values: success / danger / info - default)
-				*/}
-
-
-
-				{/*
-					Component:
-						Input
-
-					Props:
-						type (email / text - default / phone / textarea / password)
-						name (string)
-						placeholder (string)
-						label (string)
-						value (string)
-						size (possible values: small / medium - default / large)
-						error (string)
-						onInputChange (function)
-				*/}
-
-
-				{/*
 					Component:
 						LoginForm
 
@@ -76,8 +73,7 @@ class App extends Component {
 				*/}
 
 
-
-				{/*
+                {/*
 					Component:
 						Form
 
@@ -86,9 +82,9 @@ class App extends Component {
 				*/}
 
 
-			</div>
-		);
-	}
+            </div>
+        );
+    }
 }
 
 export default App;
