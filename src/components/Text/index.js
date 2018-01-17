@@ -4,7 +4,7 @@ import './styles.css'
 
 function Text({children, heading, size}) {
     return (
-        <p className={`text ${heading ? 'text-heading' : ''} text-${size}`}>{children}</p>
+        <p className={`text ${heading && 'text-heading'} text-${size}`}>{children}</p>
     );
 }
 

@@ -7,9 +7,7 @@ function Notification({children, type}) {
         <div className={`'notification notification-${type}`}>
             {type.toUpperCase()}: {children}
         </div>
-
     );
-
 }
 
 Notification.defaultProps = {

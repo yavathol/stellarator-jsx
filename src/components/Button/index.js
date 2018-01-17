@@ -19,20 +19,10 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  type: PropTypes.string,
-  disabled: PropTypes.bool,
-  loading: PropTypes.bool,
-  onButtonClick: PropTypes.func
+    type: PropTypes.string,
+    disabled: PropTypes.bool,
+    loading: PropTypes.bool,
+    onButtonClick: PropTypes.func
 };
 
 export default Button;
-
-{/*
-					Component:
-						Button
-
-					Props:
-						type (possible values: primary - default / secondary / disabled / loading)
-						onButtonClick (function)
-				*/
-}

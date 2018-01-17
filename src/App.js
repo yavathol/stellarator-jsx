@@ -3,6 +3,9 @@ import Button from './components/Button';
 import Text from './components/Text';
 import Notification from "./components/Notification";
 import Input from "./components/Input";
+import LoginForm from "./components/LoginForm";
+import Form from "./components/Form";
+import formConfig from "./config/form.js"
 
 function handleButtonClick() {
     alert('ButtonClicked');
@@ -46,41 +49,33 @@ class App extends Component {
                     cursus iaculis.
                 </Text>
 
-                <br />
+                <br/>
 
                 <Notification>A default notification</Notification>
                 <Notification type='danger'>Something nasty happened</Notification>
                 <Notification type='success'>YES!</Notification>
 
-                <br />
+                <br/>
 
-                <Input />
-                <br />
-                <Input type='email' size='large' placeholder='Enter email address...' label='Email address' onInputChange={handleChange} name='emailAddress' />
+                <Input/>
+                <br/>
+                <form>
+                    <Input type='email' size='large' placeholder='Enter email address...' label='Email address'
+                           onInputChange={handleChange} name='emailAddress'/>
+                    <br/>
+                    <Input type='textarea' label='TextArea'/>
+                    <br/>
+                    <Input name='phone' type='phone' size='small' label='Phone'/>
+                    <br/>
+                    <Input type='password' error='Password must have at least 8 characters.'/>
+                </form>
 
-                <Input type='textarea' label='TextArea'/>
+                <hr/>
 
-                {/*
-					Component:
-						LoginForm
+                <LoginForm />
+                <hr/>
 
-					Contains:
-						Two input fields - email and password
-						Submit button
-
-					Expected behavior:
-						Login and password should be printed in the console on submit button click
-				*/}
-
-
-                {/*
-					Component:
-						Form
-
-					Props:
-						config (array of objects) - required
-				*/}
-
+                <Form config={formConfig}/>
 
             </div>
         );

@@ -4,23 +4,33 @@ import './styles.css'
 
 function Input({type, name, placeholder, label, value, size, error, onInputChange}) {
     let errorMessage = null;
-    if(error) {
+    if (error) {
         errorMessage = <span className='errorMessage'>{error}</span>;
     }
+
+    let input = null;
+    if (type === 'textarea') {
+        input = <textarea className={size}
+                          name={name}
+                          placeholder={placeholder}
+                          value={value}
+                          onChange={onInputChange}
+        />;
+    } else {
+        input = <input className={size}
+                       type={type}
+                       name={name}
+                       placeholder={placeholder}
+                       value={value}
+                       onChange={onInputChange}
+        />;
+    }
     return (
-        <React.Fragment>
-            <label htmlFor="${name}">{label}</label>
-            <input className='input'
-                   type={type}
-                   name={name}
-                   placeholder={placeholder}
-                   id={name}
-                   value={value}
-                   size={size}
-                   onChange={onInputChange}
-            />
+        <div>
+            <label htmlFor={name}>{label}</label>
+            {input}
             {errorMessage}
-        </React.Fragment>
+        </div>
     );
 }
 
