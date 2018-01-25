@@ -4,23 +4,18 @@ import './styles.css'
 
 function Input({type, name, placeholder, label, value, size, error, onInputChange}) {
     const ErrorMessage = error && <span className="errorMessage">{error}</span>;
-
-    const InputElement = React.createElement(
-        (type === 'textarea' ? 'textarea' : 'input'),
-        {
-            className: size,
-            name: name,
-            placeholder: placeholder,
-            value: value,
-            onChange: onInputChange,
-            readOnly: !onInputChange
-        }
-    );
+    const InputElement = type === 'textarea' ? 'textarea' : 'input';
 
     return (
         <div>
             <label htmlFor={name}>{label}</label>
-            {InputElement}
+            <InputElement className={size}
+                    name={name}
+                    placeholder={placeholder}
+                    value={value}
+                    onChange={onInputChange}
+                    readOnly={!onInputChange}
+            />
             {ErrorMessage}
         </div>
     );
