@@ -16,6 +16,7 @@ Notification.defaultProps = {
 
 Notification.propTypes = {
     type: PropTypes.oneOf(['success', 'danger', 'info']),
+    children: PropTypes.any
 };
 
 export default Notification;

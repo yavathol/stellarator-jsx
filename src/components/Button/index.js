@@ -22,7 +22,8 @@ Button.propTypes = {
     type: PropTypes.string,
     disabled: PropTypes.bool,
     loading: PropTypes.bool,
-    onButtonClick: PropTypes.func
+    onButtonClick: PropTypes.func,
+    children: PropTypes.any
 };
 
 export default Button;

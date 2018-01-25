@@ -16,7 +16,7 @@ Text.defaultProps = {
 Text.propTypes = {
     heading: PropTypes.bool,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
-
+    children: PropTypes.any
 };
 
 export default Text;
