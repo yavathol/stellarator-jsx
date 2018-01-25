@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Button from './components/Button';
 import Text from './components/Text';
-import Notification from "./components/Notification";
-import Input from "./components/Input";
-import LoginForm from "./components/LoginForm";
-import Form from "./components/Form";
-import formConfig from "./config/form.js"
+import Notification from './components/Notification';
+import Input from './components/Input';
+import LoginForm from './components/LoginForm';
+import Form from './components/Form';
+import formConfig from './config/form.js';
 
 function handleButtonClick() {
     alert('ButtonClicked');
@@ -27,16 +27,16 @@ class App extends Component {
                     Hello
                 </Button>
                 <Button disabled>Disabled button</Button>
-                <Button loading/>
+                <Button loading />
                 <Button onButtonClick={handleButtonClick}>Click</Button>
 
-                <br/>
+                <br />
 
                 <Text>This is a sample default text</Text>
-                <br/>
+                <br />
 
-                <Text heading size='large'>The heading</Text>
-                <Text size='small'>
+                <Text heading size="large">The heading</Text>
+                <Text size="small">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus est non metus mollis
                     dignissim. Vestibulum condimentum tincidunt ultrices. Fusce a felis mattis, pellentesque nunc ac,
                     pellentesque sapien. Sed nec lectus accumsan, dignissim sem eget, facilisis mauris. Suspendisse
@@ -49,33 +49,42 @@ class App extends Component {
                     cursus iaculis.
                 </Text>
 
-                <br/>
+                <br />
 
                 <Notification>A default notification</Notification>
-                <Notification type='danger'>Something nasty happened</Notification>
-                <Notification type='success'>YES!</Notification>
+                <Notification type="danger">Something nasty happened</Notification>
+                <Notification type="success">YES!</Notification>
 
-                <br/>
+                <br />
 
-                <Input/>
-                <br/>
+                <Input />
+                <br />
                 <form>
-                    <Input type='email' size='large' placeholder='Enter email address...' label='Email address'
-                           onInputChange={handleChange} name='emailAddress'/>
-                    <br/>
-                    <Input type='textarea' label='TextArea'/>
-                    <br/>
-                    <Input name='phone' type='phone' size='small' label='Phone'/>
-                    <br/>
-                    <Input type='password' error='Password must have at least 8 characters.'/>
+                    <Input type="email"
+                           size="large"
+                           placeholder="Enter email address..."
+                           label="Email address"
+                           onInputChange={handleChange}
+                           name="emailAddress" />
+                    <br />
+                    <Input type="textarea"
+                           label="TextArea" />
+                    <br />
+                    <Input name="phone"
+                           type="phone"
+                           size="small"
+                           label="Phone" />
+                    <br />
+                    <Input type="password"
+                           error="Password must have at least 8 characters." />
                 </form>
 
-                <hr/>
+                <hr />
 
                 <LoginForm />
-                <hr/>
+                <hr />
 
-                <Form config={formConfig}/>
+                <Form config={formConfig} />
 
             </div>
         );

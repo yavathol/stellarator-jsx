@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css'
-import Input from "../Input";
+import Input from '../Input';
 
 function Form({config}) {
 
     const elements = config.map(element => {
         return (
-            <Input key={element.name} {...element}/>
+            <Input key={element.name} {...element} />
         );
     });
 

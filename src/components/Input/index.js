@@ -3,33 +3,25 @@ import PropTypes from 'prop-types';
 import './styles.css'
 
 function Input({type, name, placeholder, label, value, size, error, onInputChange}) {
-    let errorMessage = null;
-    if (error) {
-        errorMessage = <span className='errorMessage'>{error}</span>;
-    }
+    const ErrorMessage = error && <span className="errorMessage">{error}</span>;
 
-    let input = null;
-    if (type === 'textarea') {
-        input = <textarea className={size}
-                          name={name}
-                          placeholder={placeholder}
-                          value={value}
-                          onChange={onInputChange}
-        />;
-    } else {
-        input = <input className={size}
-                       type={type}
-                       name={name}
-                       placeholder={placeholder}
-                       value={value}
-                       onChange={onInputChange}
-        />;
-    }
+    const InputElement = React.createElement(
+        (type === 'textarea' ? 'textarea' : 'input'),
+        {
+            className: size,
+            name: name,
+            placeholder: placeholder,
+            value: value,
+            onChange: onInputChange,
+            readOnly: !onInputChange
+        }
+    );
+
     return (
         <div>
             <label htmlFor={name}>{label}</label>
-            {input}
-            {errorMessage}
+            {InputElement}
+            {ErrorMessage}
         </div>
     );
 }
